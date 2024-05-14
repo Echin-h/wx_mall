@@ -1,0 +1,27 @@
+version: '3.7'
+
+networks:
+    mall:
+        driver: bridge
+
+services:
+  mysql:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: mall
+      MYSQL_ROOT_PASSWORD: Rpassword
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      TZ: Asia/Shanghai
+    ports:
+        - "3307:3306"
+  redis:
+    image: redis:latest
+    restart: always
+    environment:
+      REDIS_DB_NAME: redis
+      TZ: Asia/Shanghai
+    ports:
+        - "6379:6379"
+
