@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"wxapp/config"
+	"wxapp/pkg/log"
 	"wxapp/pkg/mysql/db"
 	"wxapp/router"
 )
@@ -11,6 +12,8 @@ func loading() {
 	config.LoadConfig()
 	db.LoadMysql()
 	//db.LoadRedis()
+	log.LoadLog()
+	log.Logger.Info("log loading success...")
 	fmt.Println("loading success...")
 }
 

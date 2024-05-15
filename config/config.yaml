@@ -16,5 +16,18 @@ mysql:
   parseTime: True
   Loc: Local
 
-logger:
+
+Zap:
+    prefix: wxapp
+    level: debug
+    director: ./pkg/log/logs
+    encoderLevel: LowercaseColorLevelEncoder
+    maxAge: 7
+    showLine: true
+    logInConsole: true
+    encoder: console
+    maxSize: 600
+    maxBackups: 5
+    compress: true
+
 

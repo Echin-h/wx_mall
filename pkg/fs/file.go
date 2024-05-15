@@ -21,3 +21,13 @@ func IsNotExistMkDir(path string) error {
 	}
 	return nil
 }
+
+func IsNotExistMkFile(path string) error {
+	if exists := FileExists(path); !exists {
+		_, err := os.Create(path)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
+}
