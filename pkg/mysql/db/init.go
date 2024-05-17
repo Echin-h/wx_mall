@@ -59,7 +59,7 @@ func NewDBClient(ctx context.Context) *gorm.DB {
 }
 
 func GetSqlLogger() logger.Interface {
-	env := strings.ToLower(config.GetConfig().System.Env)
+	env := strings.ToLower(config.GetConfig().System.Mode)
 	if env == "debug" {
 		return logger.Default.LogMode(logger.Info)
 	}

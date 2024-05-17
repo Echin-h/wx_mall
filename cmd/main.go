@@ -13,7 +13,6 @@ func loading() {
 	db.LoadMysql()
 	//db.LoadRedis()
 	log.LoadLog()
-	log.Logger.Info("log loading success...")
 	fmt.Println("loading success...")
 }
 

@@ -12,7 +12,7 @@ var config *Conf
 
 func LoadConfig() {
 	workDir, _ := os.Getwd()
-	if !fs.FileExists(workDir + "/config/config.yaml") {
+	if !fs.FileExists(workDir + "/config.yaml") {
 		panic(fmt.Errorf("config fs not found"))
 	}
 	viper.SetConfigName("config")
@@ -35,6 +35,7 @@ func LoadConfig() {
 		}
 	})
 	viper.WatchConfig()
+	fmt.Println("loading config success...")
 }
 
 func GetConfig() *Conf {

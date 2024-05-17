@@ -1,6 +1,6 @@
 system:
   Version: 1.0.0
-  env: debug
+  mode: debug
   httpPort: localhost:3000
   host: localhost
   upLoadMode: Oss
@@ -16,6 +16,7 @@ mysql:
   parseTime: True
   Loc: Local
 
+redis:
 
 Zap:
     prefix: wxapp
