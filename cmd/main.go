@@ -5,13 +5,14 @@ import (
 	"wxapp/config"
 	"wxapp/pkg/log"
 	"wxapp/pkg/mysql/db"
+	"wxapp/pkg/redis"
 	"wxapp/router"
 )
 
 func loading() {
 	config.LoadConfig()
 	db.LoadMysql()
-	//db.LoadRedis()
+	redis.CacheLoading()
 	log.LoadLog()
 	fmt.Println("loading success...")
 }

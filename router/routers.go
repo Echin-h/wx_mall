@@ -1,6 +1,9 @@
 package router
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gin-gonic/gin"
+	v1 "wxapp/api/v1"
+)
 
 func NewRouter() *gin.Engine {
 	r := gin.Default()
@@ -8,10 +11,6 @@ func NewRouter() *gin.Engine {
 		gin.SetMode(gin.DebugMode)
 	}
 	r.Use(gin.Logger())
-	r.GET("/", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "hello world",
-		})
-	})
+	r.GET("/ping", v1.HelloWorld())
 	return r
 }
